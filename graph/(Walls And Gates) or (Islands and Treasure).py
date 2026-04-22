@@ -1,3 +1,4 @@
+(1st attempt)
 class Solution:
     def islandsAndTreasure(self, grid: List[List[int]]) -> None:
         ALL = []
@@ -17,4 +18,26 @@ class Solution:
             for j in range(cols):
                 if not grid[i][j]:
                     dfs(i, j)
+(post review)      
+class Solution:
+    def islandsAndTreasure(self, grid: List[List[int]]) -> None:
+        q = deque()
+        rows = len(grid)
+        cols = len(grid[0])
+        dirs = [[0,1], [1,0], [0,-1], [-1,0]]
+
+        for i in range(rows):
+            for j in range(cols):
+                if not grid[i][j]:
+                    q.append([i, j])
         
+        while q:
+            r, c = q.popleft()
+            for x, y in dirs:
+                R = r+x
+                C = c+y
+                if not (R<0 or C<0 or R>=rows or C>=cols or grid[R][C]==-1):
+                    if grid[R][C]>grid[r][c]+1:
+                        grid[R][C]=grid[r][c]+1
+                        q.append([R,C])
+                    
