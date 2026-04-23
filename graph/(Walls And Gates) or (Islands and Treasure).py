@@ -1,4 +1,4 @@
-(1st attempt)
+#(1st attempt)
 class Solution:
     def islandsAndTreasure(self, grid: List[List[int]]) -> None:
         ALL = []
@@ -18,7 +18,7 @@ class Solution:
             for j in range(cols):
                 if not grid[i][j]:
                     dfs(i, j)
-(post review)      
+#(post review)      
 class Solution:
     def islandsAndTreasure(self, grid: List[List[int]]) -> None:
         q = deque()
