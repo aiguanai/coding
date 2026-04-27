@@ -1,4 +1,4 @@
-(1st attempt)
+#(1st attempt)
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         n = len(isConnected)
